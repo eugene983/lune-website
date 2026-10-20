@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUNE — Made in Motion</title>
+<meta name="description" content="LUNE. Made in Motion. Streetwear from Nairobi. First drop, Lord Knows — coming soon.">
+<meta property="og:title" content="LUNE — Made in Motion">
+<meta property="og:description" content="Streetwear from Nairobi. First drop, Lord Knows — coming soon. Join the list.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#3A2219">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233A2219'/%3E%3Cpath d='M66 22a30 30 0 1 0 0 56a24 24 0 1 1 0-56z' fill='%23E8C8B4'/%3E%3Ccircle cx='67' cy='35' r='5' fill='%23C98A70'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#3A2219;
+    --bg-deep:#2C1912;
+    --cream:#E8C8B4;
+    --copper:#C98A70;
+    --muted:#9C7D70;
+    --line:rgba(201,138,112,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:Inter,system-ui,sans-serif;
+    font-weight:300;
+    min-height:100vh;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* soft grain + vignette */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(ellipse at 50% 30%,transparent 0%,rgba(0,0,0,.35) 100%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 20px}
+
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:24px 0;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)
+  }
+  header a{color:var(--muted);text-decoration:none;transition:color .3s}
+  header a:hover{color:var(--copper)}
+
+  /* HERO */
+  .hero{min-height:calc(100vh - 80px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px 0 60px}
+  .kicker{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
+  .mark{width:min(320px,72vw);height:auto;margin-bottom:36px}
+  .mark .ring{transform-origin:200px 200px;animation:spin 60s linear infinite}
+  .mark .ring2{transform-origin:200px 200px;animation:spin 90s linear infinite reverse}
+  .mark .moon{animation:breathe 6s ease-in-out infinite;transform-origin:200px 200px}
+  .mark .star{animation:orbit 6s ease-in-out infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes breathe{0%,100%{opacity:1}50%{opacity:.88}}
+  @keyframes orbit{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,-4px)}}
+
+  h1{
+    font-family:"Cormorant Garamond",serif;font-weight:400;
+    font-size:clamp(56px,13vw,120px);letter-spacing:.32em;line-height:1;
+    margin-right:-.32em; /* optical centering for letter-spacing */
+  }
+  .tagline{
+    font-family:"Cormorant Garamond",serif;font-style:italic;
+    font-size:clamp(20px,4vw,28px);color:var(--copper);margin-top:16px
+  }
+  .divider{display:flex;align-items:center;gap:18px;width:min(520px,90%);margin:44px auto 28px}
+  .divider span{flex:1;height:1px;background:var(--line)}
+  .divider i{width:10px;height:10px;background:var(--copper);transform:rotate(45deg)}
+  .soon{font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--cream)}
+  .soon b{font-weight:500;color:var(--copper)}
+
+  .scroll{margin-top:56px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scroll::after{content:"";width:1px;height:40px;background:linear-gradient(var(--copper),transparent);animation:drip 2.4s ease-in-out infinite}
+  @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* DROP */
+  section{padding:90px 0;border-top:1px solid var(--line)}
+  .drop{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .label{font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--copper);margin-bottom:18px}
+  h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(40px,7vw,68px);line-height:1.02;margin-bottom:24px}
+  h2 em{color:var(--copper)}
+  p.body{font-size:15px;line-height:1.8;color:#d6b8a6;max-width:440px}
+  .specs{list-style:none;margin-top:28px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .specs li{padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+  .specs li span:last-child{color:var(--cream)}
+  .tee{background:var(--bg-deep);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .tee svg{width:78%;height:auto}
+  .tee .tag{position:absolute;bottom:18px;left:20px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+  .tee .tag2{position:absolute;top:18px;right:20px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--copper)}
+
+  /* LIST */
+  .list{text-align:center}
+  .list h2{margin-bottom:14px}
+  .list p.body{margin:0 auto 36px}
+  form{display:flex;flex-direction:column;gap:14px;max-width:460px;margin:0 auto}
+  .row{display:flex;gap:14px}
+  input,select{
+    flex:1;width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);
+    color:var(--cream);font:inherit;font-size:15px;padding:14px 2px;outline:none;transition:border-color .3s;border-radius:0
+  }
+  select{appearance:none;-webkit-appearance:none;cursor:pointer}
+  select option{background:var(--bg);color:var(--cream)}
+  input::placeholder{color:var(--muted)}
+  input:focus,select:focus{border-bottom-color:var(--copper)}
+  button{
+    margin-top:16px;background:var(--cream);color:var(--bg);border:none;cursor:pointer;
+    font:inherit;font-size:12px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;padding:18px;transition:background .3s
+  }
+  button:hover{background:var(--copper)}
+  button:disabled{opacity:.6;cursor:wait}
+  .hidden{display:none}
+  .msg{margin-top:18px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;color:var(--copper);min-height:28px}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 50px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}
+  footer a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px}
+  footer a:hover{color:var(--copper)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:760px){
+    .drop{grid-template-columns:1fr;gap:40px}
+    .row{flex-direction:column}
+    header .hide-sm{display:none}
+    footer{flex-direction:column;text-align:center}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span>Nairobi</span>
+    <span class="hide-sm">Drop 01 — Lord Knows</span>
+    <a href="https://www.instagram.com/lune.stores" target="_blank" rel="noopener">@lune.stores</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="kicker">Streetwear · Nairobi</p>
+
+      <svg class="mark" viewBox="0 0 400 400" aria-label="LUNE crescent moon logo" role="img">
+        <circle class="ring" cx="200" cy="200" r="190" fill="none" stroke="#9C7D70" stroke-width="1" stroke-dasharray="2 6" opacity=".7"/>
+        <circle class="ring2" cx="200" cy="200" r="160" fill="none" stroke="#C98A70" stroke-width="1" opacity=".8"/>
+        <g class="moon">
+          <path d="M268 86 A128 128 0 1 0 268 314 A100 100 0 1 1 268 86 Z" fill="#E8C8B4"/>
+        </g>
+        <circle class="star" cx="258" cy="140" r="11" fill="#C98A70"/>
+      </svg>
+
+      <h1>LUNE</h1>
+      <p class="tagline">Made in Motion</p>
+
+      <div class="divider"><span></span><i></i><span></span></div>
+      <p class="soon">First drop <b>coming soon</b></p>
+
+      <a class="scroll" href="#drop">Scroll</a>
+    </div>
+
+    <section id="drop">
+      <div class="drop">
+        <div class="reveal">
+          <p class="label">Drop 01</p>
+          <h2>Lord<br><em>Knows.</em></h2>
+          <p class="body">
+            Heavyweight cotton, cut loose. Sleeves gone, armholes dropped, hem left raw.
+            Made for the walk home at 2am and everything before it. Limited run — when it's gone, it's gone.
+          </p>
+          <ul class="specs">
+            <li><span>Piece</span><span>Cropped sleeveless tee</span></li>
+            <li><span>Fabric</span><span>Heavyweight cotton</span></li>
+            <li><span>Fit</span><span>Boxy · Raw hem</span></li>
+            <li><span>Run</span><span>Limited</span></li>
+          </ul>
+        </div>
+
+        <div class="tee reveal" aria-hidden="true">
+          <span class="tag2">Preview</span>
+          <svg viewBox="0 0 300 300">
+            <!-- cropped sleeveless tee silhouette -->
+            <path d="M112 40
+                     Q150 62 188 40
+                     L222 52
+                     Q218 92 236 120
+                     L236 236
+                     Q236 240 232 240
+                     L68 240
+                     Q64 240 64 236
+                     L64 120
+                     Q82 92 78 52 Z"
+                  fill="#E8C8B4"/>
+            <!-- collar rib -->
+            <path d="M112 40 Q150 62 188 40" fill="none" stroke="#C98A70" stroke-width="3"/>
+            <!-- raw hem -->
+            <path d="M64 236 l8 4 l8 -3 l9 4 l8 -4 l9 3 l8 -3 l9 4 l8 -3 l9 3 l8 -4 l9 4 l8 -3 l9 3 l8 -4 l9 4 l8 -3 l9 3 l8 -2"
+                  fill="none" stroke="#3A2219" stroke-width="1.2" opacity=".35"/>
+            <!-- chest logo -->
+            <g transform="translate(176 92) scale(.09)">
+              <path d="M268 86 A128 128 0 1 0 268 314 A100 100 0 1 1 268 86 Z" fill="#3A2219"/>
+              <circle cx="258" cy="140" r="14" fill="#C98A70"/>
+            </g>
+          </svg>
+          <span class="tag">LUNE / 01</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="list" id="list">
+      <div class="reveal">
+        <p class="label">The list</p>
+        <h2>Get it <em>first.</em></h2>
+        <p class="body">Join the list for early access, drop date and restocks. No spam — just the drop.</p>
+
+        <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="waitlist">
+          <input type="hidden" name="form-name" value="waitlist">
+          <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <input type="text" name="name" placeholder="Name" autocomplete="name" required>
+          <div class="row">
+            <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+            <input type="tel" name="whatsapp" placeholder="WhatsApp (optional)" autocomplete="tel">
+          </div>
+          <select name="size" aria-label="Your size">
+            <option value="" selected>Your size (optional)</option>
+            <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+          </select>
+          <button type="submit">Join the list</button>
+          <p class="msg" id="msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="yr">2026</span> LUNE · Nairobi</span>
+    <span>Made in Motion</span>
+    <a href="https://www.instagram.com/lune.stores" target="_blank" rel="noopener">Instagram</a>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Netlify Forms AJAX submit
+  const form = document.getElementById('waitlist');
+  const msg = document.getElementById('msg');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button');
+    btn.disabled = true; msg.textContent = '';
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      });
+      if (!res.ok) throw new Error(res.status);
+      form.reset();
+      msg.textContent = "You're on the list. Lord knows it's coming.";
+    } catch (err) {
+      msg.textContent = 'Something went wrong — DM us on Instagram.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
